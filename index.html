@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY PROFILE</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-card {
+    display: flex;
+    max-width: 800px;
+    width: 90%;
+    background: #f0f3f7;
+    border-radius: 25px;
+    box-shadow: 20px 20px 60px #c8d0e7, -20px -20px 60px #ffffff;
+    overflow: hidden;
+}
+
+.profile-left {
+    background: #f0f3f7;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    border-right: 1px solid #d1d9e6;
+}
+
+.profile-left img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #4facfe;
+}
+
+.profile-left h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #4facfe;
+}
+
+.profile-left h2 {
+    margin: 5px 0 0;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.profile-right {
+    flex: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bio {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.contact-header h3 {
+    margin: 0;
+    color: #4facfe;
+}
+
+.arrow {
+    transition: transform 0.4s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.contact-list.show {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.contact-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #4facfe;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #00f2fe;
+}
+
+.contact-list li button {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #4facfe, #00f2fe);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: transform 0.3s;
+}
+
+.contact-list li button:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width: 768px){
+    .profile-card {
+        flex-direction: column;
+    }
+    .profile-left {
+        border-right: none;
+        border-bottom: 1px solid #d1d9e6;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="profile-card">
+    <div class="profile-left">
+        <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t39.30808-1/539358641_122103222122991338_380277520725270191_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeE0eqrZFh0EOXd6wGC9Gos9mvK-PC66Ciia8r48LroKKHtFCF2w8Zj_w1j-CO7mjNjH4szG72uUwtKmPFqdfbCb&_nc_ohc=lEC-wjd7hiAQ7kNvwFYNPAq&_nc_oc=AdkOtGFzCfOOXXA3m-Bp_gAcGseKInBDID_OGgx1_T7kvgpH6tZCbOcznHIbDpN8Kek&_nc_zt=24&_nc_ht=scontent.fcrk3-2.fna&_nc_gid=0Sl1s0A5LYD3JPvWDPJ40w&oh=00_Afj6BDI9ZCW8jT6io4E9RcIvVmv4mLR2vOPNYk7_9abdxw&oe=692DA72F" alt="Profile Picture">
+        <h1>Tejada Rashid</h1>
+        <h2>BSIT-22011</h2>
+    </div>
+
+    <div class="profile-right">
+        <p class="bio">
+            A student who is trying his best to reach the top. Passionate about technology, coding, and creative projects.
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-header" onclick="toggleContact()">
+                <h3>Contact & Links</h3>
+                <span id="arrow" class="arrow">⬇️</span>
+            </div>
+            <ul id="contactList" class="contact-list">
+                <li><a href="https://www.facebook.com/profile.php?id=61579740160888" target="_blank">🟦 Facebook</a></li>
+                <li><a href="https://www.instagram.com/ashhh.xxzc/" target="_blank">📷 Instagram</a></li>
+                <li><a href="https://github.com/rashidtejada5-commits" target="_blank">😺 GitHub</a></li>
+                <li>📧 rashid.tejada1@gmail.com</li>
+                <li>📍 Quezon City, Philippines</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleContact() {
+    const list = document.getElementById('contactList');
+    const arrow = document.getElementById('arrow');
+    list.classList.toggle('show');
+    arrow.classList.toggle('rotate');
+}
+</script>
+
+</body>
+</html>
